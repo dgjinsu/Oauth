@@ -1,3 +1,6 @@
-app:
-  auth:
-    security-key: ogihzelsighzlseuifgzlsegfiluzseglfiugeslfizsveluifve
+server:
+  port: 8080
+spring:
+  profiles:
+    active: local
+    include: connection, oauth2
