@@ -20,8 +20,8 @@ public class JwtProvider {
             String userId, AuthProvider provider, String accessToken) {
         HashMap<String, Object> claim = new HashMap<>();
         claim.put("userId", userId);
-        claim.put("provider", provider);
-        claim.put("accessToken", accessToken);
+        claim.put("provider", provider); // 어떤 플랫폼으로 로그인했는지
+        claim.put("accessToken", accessToken); // 플랫폼에서 발급해준 accessToken
         return createJwt("ACCESS_TOKEN", ACCESS_TOKEN_EXPIRATION_TIME, claim);
     }
 
