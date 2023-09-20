@@ -7,8 +7,7 @@ spring:
       client:
         registration:
 #          google:
-#            # https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=$8fd7a1f394d9bbd09fdfdd3827146d73&redirect_uri=${http://localhost:8080/login/oauth2/code/google}
-#            client-id: {google 로그인 api를 만들때 발급 받은 client-id} #rest api key: 8fd7a1f394d9bbd09fdfdd3827146d73
+#            client-id: {google 로그인 api를 만들때 발급 받은 client-id}
 #            client-secret: {google 로그인 api를 만들때 발급 받은 client-secret}
 #            redirect-uri: "http://localhost:8080/login/oauth2/code/google"
 #            authorization-grant-type: authorization_code
