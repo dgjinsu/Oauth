@@ -14,7 +14,7 @@ spring:
 #            authorization-grant-type: authorization_code
 #            scope: profile, email
           kakao:
-            client-id: 8fd7a1f394d9bbd09fdfdd3827146d73
+            client-id: { 클라이언트 ID }
             redirect-uri: "http://localhost:8080/login/oauth2/code/kakao"
             client-authentication-method: POST
             authorization-grant-type: authorization_code # 웹 애플리케이션 또는 모바일 앱과 같은 안전한 환경에서 사용
