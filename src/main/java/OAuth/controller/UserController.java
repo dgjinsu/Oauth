@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -16,7 +17,12 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public ResponseEntity<Long> createUser(@RequestBody SignUpRequest signUpRequest){
+    public ResponseEntity<String> createUser(@RequestBody SignUpRequest signUpRequest){
         return ResponseEntity.ok(userService.createUser(signUpRequest));
+    }
+
+    @GetMapping("/login2")
+    public String loginForm() {
+        return "login";
     }
 }

@@ -41,9 +41,10 @@ public class KakaoRequestService{
     public SignInResponse redirect(TokenRequest tokenRequest) {
         TokenResponse tokenResponse = getToken(tokenRequest); // WebClient 호출, 카카오에 accessToken 요청
         KakaoUserInfo kakaoUserInfo = getUserInfo(tokenResponse.getAccessToken()); // 유저 resource 요청
+        boolean a = userRepository.existsById(String.valueOf(kakaoUserInfo.getId()));
 
         // kakaoUserId 로 DB 에서 조회
-        if(userRepository.existsById(Long.valueOf(String.valueOf(kakaoUserInfo.getId())))){
+        if(a){
             String accessToken = jwtProvider.createAccessToken(
                     String.valueOf(kakaoUserInfo.getId()), AuthProvider.KAKAO, tokenResponse.getAccessToken());
             String refreshToken = jwtProvider.createRefreshToken(

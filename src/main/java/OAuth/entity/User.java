@@ -11,7 +11,7 @@ import lombok.*;
 public class User {
 
     @Id
-    private Long id;
+    private String id;
 
     @Column(nullable = false)
     private String nickname;

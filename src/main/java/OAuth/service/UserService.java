@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
     private final UserRepository userRepository;
 
-    public Long createUser(SignUpRequest signUpRequest) {
+    public String createUser(SignUpRequest signUpRequest) {
         if(userRepository.existsByIdAndAuthProvider(signUpRequest.getId(), signUpRequest.getAuthProvider())){
             throw new CustomException("already exist user");
         }
