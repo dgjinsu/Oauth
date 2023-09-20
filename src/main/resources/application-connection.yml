@@ -1,21 +1,13 @@
 spring:
-  config:
-    activate:
-      on-profile: local
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: { 비밀번호 }
   jpa:
-    show-sql: true
     hibernate:
-      ddl-auto: none
-    defer-datasource-initialization: true
-  h2:
-    console:
-      enabled: false
-      path: /h2-console
-      settings:
-        trace: false
-        web-allow-others: false
+      ddl-auto: create
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        dialect: org.hibernate.dialect.MySQL8Dialect
